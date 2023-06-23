@@ -1,4 +1,15 @@
 # BusTicketManagement
+Our app makes it easy for customer to book bus tickets for your next trip. You can have a ticket at home. App connects customers and the bus ‘s company. 
++ Register account
++ Login
++ Look up information (time , route, date, …)
++ Book bus seats
++ Request to cancel or change ticket seats
+Admin 
++ Manage route information, bus
++ Manage bus tickets (cancel or change ticket seats)
++ Report 
+
 1. Login
 <img width="185" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/fdf75013-f9ee-4c57-b9fc-f57baec09249">
 <img width="194" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/a83112b9-e6b9-4e9e-8ca9-af43a834d485">

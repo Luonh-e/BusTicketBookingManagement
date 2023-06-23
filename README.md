@@ -2,10 +2,12 @@
 1. Login
 <img width="185" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/fdf75013-f9ee-4c57-b9fc-f57baec09249">
 <img width="194" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/a83112b9-e6b9-4e9e-8ca9-af43a834d485">
+
 2. Book ticket
 <img width="202" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/025be17f-d975-4165-ba7a-cb780f56e55b">
 <img width="192" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/0b797e0f-381a-47e9-9266-5947b6e7f094">
 <img width="195" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/d337dffd-9d28-44a0-b1f6-b0d48ea55ff8">
+
 3. Admin
 <img width="190" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/65cf8044-9509-476e-bf55-5b16a310d837">
 <img width="191" alt="image" src="https://github.com/Luonh-e/BusTicketBookingManagement/assets/107902910/48f0be28-f720-49cd-954f-1c982c251e0f">

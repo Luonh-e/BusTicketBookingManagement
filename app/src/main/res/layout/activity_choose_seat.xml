@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/background"
+    android:theme="@style/AppTheme">
+
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:theme="@style/MyActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backBefore"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/back_icon"
+            app:tint="@color/colorTextIcons" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/textviewRoute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ho Chi Minh - Ca Mau"
+                android:textColor="@color/maincolor2"
+                android:textSize="@dimen/text_content_size" />
+
+            <TextView
+                android:id="@+id/textviewDepartureDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CN, 30/4/1975"
+                android:textColor="@color/maincolor2"
+                android:textSize="@dimen/text_note_size" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height= "600dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearMyTicket"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/layoutHeader">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imageTicket"
+                        android:layout_width="@dimen/width_img_ticket"
+                        android:layout_height="@dimen/height_img_ticket"
+                        android:padding="8dp"
+                        android:src="@drawable/limousine21v1"
+                        app:riv_corner_radius="@dimen/basic_radius" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_base0.5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nameTicket"
+                            style="@style/bus_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Giường nằm 40 chỗ (WC)" />
+
+                        <TextView
+                            android:id="@+id/busNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:paddingLeft="@dimen/margin_base0.5"
+                            android:text="61C2-18182"
+                            android:theme="@style/ticket_inf" />
+
+                        <TextView
+                            android:id="@+id/departureTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:fontFamily="@font/calibri"
+                            android:text="9:00 - 11:30"
+                            android:textAlignment="textEnd" />
+
+                        <TextView
+                            android:id="@+id/priceTicket"
+                            style="@style/bus_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/calibri"
+                            android:text="250.000 VND"
+                            android:textAlignment="textEnd" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/listseat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_base0.5"
+                    android:background="@drawable/boder_shape"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@+id/linearMyTicket">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="@dimen/margin_base0.5"
+                        android:orientation="horizontal"
+                        android:weightSum="100">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/booked_img" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ghế đã đặt"
+                                android:textAlignment="center"
+                                android:textColor="#22b2bb" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ghế chống"
+                                android:textAlignment="center"
+                                android:textColor="#22b2bb" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="33.3"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/your_seat_img" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ghế bạn chọn"
+                                android:textAlignment="center"
+                                android:textColor="#22b2bb" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="1"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:visibility="invisible" />
+
+                            <TextView
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="A"
+                                android:textAlignment="center"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="B"
+                                android:textAlignment="center"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="4dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="A"
+                                android:textAlignment="center"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="36dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="B"
+                                android:textAlignment="center"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="1"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_1a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_1b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_1a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_1b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center"
+                            tools:ignore="NestedWeights">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="2"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_2a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_2b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_2a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_2b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="3"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_3a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_3b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_3a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_3b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="4"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_4a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_4b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_4a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_4b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="5"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_5a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_5b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_5a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_5b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="6"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_6a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_6b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_6a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_6b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="7"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_7a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_7b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_7a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_7b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="8"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_8a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_8b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_8a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_8b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="9"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_9a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_9b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_9a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_9b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_weight="100"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="16dp"
+                                android:fontFamily="@font/print_clearly"
+                                android:text="10"
+                                android:textColor="#c3c3c3"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/seat_10a"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_10b"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="50"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/seat_10a_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/available_img" />
+
+                            <ImageView
+                                android:id="@+id/seat_10b_upstair"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginStart="4dp"
+                                android:src="@drawable/available_img" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow_button"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/seatChoose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_base0.5"
+            android:textAlignment="center"
+            android:theme="@style/ticket_inf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+
+                android:id="@+id/buttonNextCusinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_base"
+                android:background="@drawable/button_shape"
+                android:layout_marginLeft="@dimen/margin_base0.5"
+                android:layout_marginRight="@dimen/margin_base0.5"
+                android:text="Continue"
+                android:textColor="@color/maincolor2"
+                android:textSize="@dimen/text_content_size" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

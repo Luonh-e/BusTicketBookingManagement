@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#F000</color>
+    <color name="colorPrimary">#EFEFEF</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="maincolor1">#8F70EF</color>
+    <color name="maincolor2">#FFFFFF</color>
+    <color name="bg_nav">#EFEFEF</color>
+    <color name="focussedbutton">#EAEAEA</color>
+
+    <color name="background">#EFEFEF</color>
+    //textIcons
+    <color name="colorTextIcons">#FFFFFF</color>
+
+    //textColors
+    <color name="colorText_busName">#000</color>
+    <color name="colorText_delete">#FD0000</color>
+</resources>

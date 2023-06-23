@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".myticket.UpcomingTicketFragment"
+    android:background="@drawable/background">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/linearlayoutNoTickets"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bus_ticket_img"
+            android:paddingBottom="@dimen/margin_base"/>
+
+        <TextView
+            android:theme="@style/edt_view"
+            android:gravity="center"
+            android:text="@string/text_no_tickets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:theme="@style/edt_view"
+            android:gravity="center"
+            android:text="@string/text_require_pull_down"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margin_base0.5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycleviewTicket"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        />
+
+</FrameLayout>

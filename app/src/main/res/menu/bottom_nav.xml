@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/search_icon"
+        android:title="@string/text_search_icon"
+        />
+
+    <item
+        android:id="@+id/action_myticket"
+        android:icon="@drawable/ticket_icon"
+        android:title="@string/text_ticket_icon"
+        />
+
+    <item
+        android:id="@+id/action_myaccount"
+        android:icon="@drawable/account_icon"
+        android:title="@string/text_account_icon"
+        />
+</menu>
